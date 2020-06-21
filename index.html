@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Mesto</title>
+</head>
+
+<body class="root">
+    <div class="page">
+        <div class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="логотип Mesto">
+        </div>
+        <!--конец header-->
+        <main class="content">
+            <section class="profile">
+                <div class="profile__place">
+                    <img src="./images/avatar.jpg" alt="фото профиля" class="profile__foto">
+                    <div class="profile__info">
+                        <div class="profile__items">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <button class="profile__button-edit"></button>
+                        </div>
+                        <p class="profile__job">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__button-add"></button>
+            </section>
+            <!-- конец profile-->
+            <section class="element">
+                <ul class="element__list">
+                    <li class="element__item">
+                        <img src="./images/karachaevo-cherkesskaya-1.jpg" alt="фото Республика Карачаево-Черкеск" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Карачаево-Черкеск</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                    <li class="element__item">
+                        <img src="./images/krasnogorsk-3.jpg" alt="фото Красногорск" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Красногорск</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                    <li class="element__item">
+                        <img src="./images/dombai-2.jpg" alt="фото Домбай" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Домбай</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                    <li class="element__item">
+                        <img src="./images/verh.teberda-4.jpg" alt="фото Верхняя Теберда" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Верхняя Теберда</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                    <li class="element__item">
+                        <img src="./images/adler-5.jpg" alt="фото Адлер" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Адлер</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                    <li class="element__item">
+                        <img src="./images/zelenograd-6.jpg" alt="фото Зеленоград" class="element__image">
+                        <div class="element__place">
+                            <h2 class="element__title">Зеленоград</h2>
+                            <button class="element__like"></button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <!--конец elements-->
+        </main>
+        <!--конец main-->
+        <footer class="footer">
+            <p class="footer__author">&#169; 2020 Mesto Russia</p>
+        </footer>
+
+        <div class="popup-edit">
+            <div class="popup-edit__content">
+                <div class="popup-edit__close"></div>
+                <form class="popup-edit__form" action="#" method="POST" name="editProfile">
+                    <h2 class="popup-edit__title">Редактировать профиль</h2>
+                    <input type="text" class="popup-edit__type-name">
+                    <div class="popup-edit__line"></div>
+                    <input type="text" class="popup-edit__type-about">
+                    <div class="popup-edit__line"></div>
+                    <button class="popup-edit__button" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>
