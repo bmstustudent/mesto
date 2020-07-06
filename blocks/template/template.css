@@ -5,15 +5,3 @@
 @import url(./__title/element__title.css);
 @import url(./__like/element__like.css);
 @import url(./__delete/element__delete.css);
-.element {
-    margin: 0 auto;
-    max-width: 882px;
-    margin-top: 51px;
-    padding-bottom: 61px;
-}
-
-@media screen and (max-width: 881px) {
-    .element {
-        max-width: 582px;
-    }
-}
