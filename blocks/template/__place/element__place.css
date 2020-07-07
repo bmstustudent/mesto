@@ -1,0 +1,9 @@
+.element__place {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 246px;
+    margin-top: 25px;
+    margin-bottom: 31px;
+}

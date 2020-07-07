@@ -1,0 +1,7 @@
+.element__like-active {
+    background-image: url(../../../images/like-active.svg);
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
