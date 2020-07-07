@@ -1,15 +1,21 @@
 .element__like {
     background-image: url(../../../images/like-inactive.svg);
-    background-color: transparent;
-    border: none;
+    border: 0;
     width: 21px;
     height: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
-    transition: transform .3s linear;
+    background-color: #FFFFFF;
+    padding: 0;
+    box-shadow: none;
 }
 
 .element__like:hover {
     opacity: 0.6;
     border: none;
-    transform: scale(1.03);
+}
+
+.element__like: active {
+    border: none;
 }

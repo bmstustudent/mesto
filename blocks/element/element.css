@@ -4,6 +4,7 @@
 @import url(./__place/element__place.css);
 @import url(./__title/element__title.css);
 @import url(./__like/element__like.css);
+@import url(./__like-active/element__like-active.css);
 @import url(./__delete/element__delete.css);
 .element {
     margin: 0 auto;

@@ -31,59 +31,10 @@
             <!-- конец profile-->
             <section class="element">
                 <ul class="element__list">
-                    <!-- <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/karachaevo-cherkesskaya-1.jpg" alt="фото Республика Карачаево-Черкеск" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Карачаево-Черкеск</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li>
-                    <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/krasnogorsk-3.jpg" alt="фото Красногорск" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Красногорск</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li>
-                    <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/dombai-2.jpg" alt="фото Домбай" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Домбай</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li>
-                    <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/verh.teberda-4.jpg" alt="фото Верхняя Теберда" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Верхняя Теберда</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li>
-                    <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/adler-5.jpg" alt="фото Адлер" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Адлер</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li>
-                    <li class="element__item">
-                        <button type="button" class="element__delete"></button>
-                        <img src="./images/zelenograd-6.jpg" alt="фото Зеленоград" class="element__image">
-                        <div class="element__place">
-                            <h2 class="element__title">Зеленоград</h2>
-                            <button type="button" class="element__like"></button>
-                        </div>
-                    </li> -->
                 </ul>
             </section>
-            <!--конец elements-->
+
             <template class="template">
-                    <ul class="element__list">
                         <li class="element__item">
                             <button type="button" class="element__delete"></button>
                                 <img class="element__image" alt="#" src="">
@@ -92,7 +43,6 @@
                             <button type="button" class="element__like"></button>
                                 </div>
                         </li>
-                    </ul>
             </template>
 
         </main>
@@ -100,8 +50,6 @@
         <footer class="footer">
             <p class="footer__author">&#169; 2020 Mesto Russia</p>
         </footer>
-
-
 
         <!--кнопка редактирования профиля-->
         <div class="popup-edit">
@@ -129,13 +77,12 @@
             </div>
         </div>
 
-
         <!--кнопка увеличения изображения-->
         <div class="popup-image">
             <figure class="popup-image__content">
-                <button type="button" class="popup-edit__close"></button>
-                <img src="" alt="">
-                <p class="popup-addCard__name"></p>
+                <button type="button" class="popup-image__close"></button>
+                <img src="#" alt="" class="popup-image__photo"></img>
+                <p class="popup-image__title"></p>
             </figure>
         </div>
 

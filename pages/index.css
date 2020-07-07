@@ -9,6 +9,7 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup-edit/popup-edit.css);
 @import url(../blocks/popup-addCard/popup-addCard.css);
+@import url(../blocks/popup-image/popup-image.css);
 @import url(../blocks/popup-edit/_opened/popup-edit_opened.css);
 
 /* * {

@@ -1,4 +1,10 @@
-.popup-addCard {
+@import url(./__content/popup-edit__content.css);
+@import url(./__close/popup-edit__close.css);
+@import url(./__form/popup-edit__form.css);
+@import url(./__title/popup-edit__title.css);
+@import url(./__type/popup-edit__type.css);
+@import url(./__button/popup-edit__button.css);
+.popup-edit {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +19,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .popup-addCard {
+    .popup-edit {
         left: 40px;
         top: 210px;
         width: 240px;

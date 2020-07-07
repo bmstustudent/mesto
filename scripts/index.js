@@ -6,20 +6,15 @@ let nameInput = popup.querySelector('#name');
 let jobInput = popup.querySelector('#about');
 let profName = document.querySelector('.profile__name');
 let profText = document.querySelector('.profile__job');
-
-
 const cardsList = document.querySelector('.element__list');
 const cardTemplateElement = document.querySelector('.template');
-const popupmesto = document.querySelector('.popup-addCard');
-const popupmestoOpenButton = document.querySelector('.profile__button-add');
-const popupmestoCloseButton = popupmesto.querySelector('.popup-edit__close');
-let cardFormElement = popupmesto.querySelector('.popup-edit__form');
+const popupaddCard = document.querySelector('.popup-addCard');
+const popupaddCardOpenButton = document.querySelector('.profile__button-add');
+const popupaddCardCloseButton = popupaddCard.querySelector('.popup-edit__close');
+let cardFormElement = popupaddCard.querySelector('.popup-edit__form');
 let cardInputElement = cardFormElement.querySelector('#name');
 let cardInputLinkEl = cardFormElement.querySelector('#link');
 let cardFormSubmitButton = cardFormElement.querySelector('.popup-edit__button');
-
-
-
 
 const popupToggle = function(event) {
     if (!popup.classList.contains('popup-edit_opened')) {
@@ -93,12 +88,12 @@ initialCards.forEach(function(element) {
     addCards(element.name, element.link)
 });
 
-const popupmestoToggle = function() {
-    popupmesto.classList.toggle('popup-edit_opened')
+const popupaddCardToggle = function() {
+    popupaddCard.classList.toggle('popup-edit_opened')
 }
 
-popupmestoOpenButton.addEventListener('click', popupmestoToggle);
-popupmestoCloseButton.addEventListener('click', popupmestoToggle);
+popupaddCardOpenButton.addEventListener('click', popupaddCardToggle);
+popupaddCardCloseButton.addEventListener('click', popupaddCardToggle);
 
 cardFormElement.addEventListener('submit', e => {
     e.preventDefault();
@@ -107,35 +102,31 @@ cardFormElement.addEventListener('submit', e => {
     cardInputElement.value = '';
     cardInputLinkEl.value = '';
     addCards(name, link);
-    popupmestoToggle();
+    popupaddCardToggle();
 })
 
+let Like = document.querySelectorAll('.element__like');
 
-
-let socialLike = document.querySelectorAll('.element__like');
-
-socialLike.forEach((activButton) => {
+Like.forEach((activButton) => {
     activButton.addEventListener('click', (evt) => {
-        const socialLikeTarget = evt.target;
-        socialLikeTarget.classList.toggle('element__like_active');
+        const LikeTarget = evt.target;
+        LikeTarget.classList.toggle('element__like-active');
     });
 });
 
-let figureFoto = document.querySelectorAll('.element__image');
+let figurePhoto = document.querySelectorAll('.element__image');
 let popupFigure = document.querySelector('.popup-image');
-let popupimgText = popupFigure.querySelector('.popup-image__name');
-let popupimgFoto = popupFigure.querySelector('.popup-image__foto');
-const popupimgCloseButton = popupFigure.querySelector('.popup-edit__close');
+let popupimgeText = popupFigure.querySelector('.popup-image__title');
+let popupimgePhoto = popupFigure.querySelector('.popup-image__photo');
+const popupimgeCloseButton = popupFigure.querySelector('.popup-image__close');
 
-
-
-figureFoto.forEach((activeFoto) => {
-    activeFoto.addEventListener('click', (evt) => {
-        const figureFotoTarget = evt.target;
-        popupFigure.classList.toggle('popup-edit__opened');
-        popupimgFoto.src = figureFotoTarget.src;
-        const figureCard = figureFotoTarget.closest('.element__item');
-        popupimgText.textContent = figureCard.querySelector('.element__title').textContent;
+figurePhoto.forEach((activePhoto) => {
+    activePhoto.addEventListener('click', (evt) => {
+        const figurePhotoTarget = evt.target;
+        popupFigure.classList.toggle('popup-edit_opened');
+        popupimgePhoto.src = figurePhotoTarget.src;
+        const figureCard = figurePhotoTarget.closest('.element__item');
+        popupimgeText.textContent = figureCard.querySelector('.element__title').textContent;
     });
 });
 
@@ -143,4 +134,4 @@ const popupFigureToggle = function() {
     popupFigure.classList.toggle('popup-edit_opened')
 }
 
-popupimgCloseButton.addEventListener('click', popupFigureToggle);
+popupimgeCloseButton.addEventListener('click', popupFigureToggle);
