@@ -115,17 +115,17 @@ like.forEach((activButton) => {
 
 let figurePhoto = document.querySelectorAll('.element__image');
 let popupFigure = document.querySelector('.popup-image');
-let popupImgeText = popupFigure.querySelector('.popup-image__title');
-let popupImgePhoto = popupFigure.querySelector('.popup-image__photo');
-const popupImgeCloseButton = popupFigure.querySelector('.popup-image__close');
+let popupImageText = popupFigure.querySelector('.popup-image__title');
+let popupImagePhoto = popupFigure.querySelector('.popup-image__photo');
+const popupImageCloseButton = popupFigure.querySelector('.popup-image__close');
 
 figurePhoto.forEach((activePhoto) => {
     activePhoto.addEventListener('click', (evt) => {
         const figurePhotoTarget = evt.target;
         popupFigure.classList.toggle('popup-edit_opened');
-        popupImgePhoto.src = figurePhotoTarget.src;
+        popupImagePhoto.src = figurePhotoTarget.src;
         const figureCard = figurePhotoTarget.closest('.element__item');
-        popupImgeText.textContent = figureCard.querySelector('.element__title').textContent;
+        popupImageText.textContent = figureCard.querySelector('.element__title').textContent;
     });
 });
 
@@ -133,4 +133,4 @@ const popupFigureToggle = function() {
     popupFigure.classList.toggle('popup-edit_opened')
 }
 
-popupImgeCloseButton.addEventListener('click', popupFigureToggle);
+popupImageCloseButton.addEventListener('click', popupFigureToggle);

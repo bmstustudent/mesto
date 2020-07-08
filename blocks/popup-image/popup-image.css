@@ -16,5 +16,6 @@
     z-index: 1;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.4s linear 0s, opacity .4s
+    transition: visibility 0.4s linear 0s, opacity .4s;
+    color: white;
 }
