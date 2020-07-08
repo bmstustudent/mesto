@@ -8,10 +8,10 @@ let profName = document.querySelector('.profile__name');
 let profText = document.querySelector('.profile__job');
 const cardsList = document.querySelector('.element__list');
 const cardTemplateElement = document.querySelector('.template');
-const popupaddCard = document.querySelector('.popup-addCard');
-const popupaddCardOpenButton = document.querySelector('.profile__button-add');
-const popupaddCardCloseButton = popupaddCard.querySelector('.popup-edit__close');
-let cardFormElement = popupaddCard.querySelector('.popup-edit__form');
+const popupAddCard = document.querySelector('.popup-save');
+const popupAddCardOpenButton = document.querySelector('.profile__button-add');
+const popupAddCardCloseButton = popupAddCard.querySelector('.popup-edit__close');
+let cardFormElement = popupAddCard.querySelector('.popup-edit__form');
 let cardInputElement = cardFormElement.querySelector('#title');
 let cardInputLinkEl = cardFormElement.querySelector('#link');
 let cardFormSubmitButton = cardFormElement.querySelector('.popup-edit__button');
@@ -84,16 +84,15 @@ function deleteCard(event) {
 }
 
 initialCards.forEach(function(element) {
-
     addCards(element.name, element.link)
 });
 
 const popupaddCardToggle = function() {
-    popupaddCard.classList.toggle('popup-edit_opened')
+    popupAddCard.classList.toggle('popup-edit_opened')
 }
 
-popupaddCardOpenButton.addEventListener('click', popupaddCardToggle);
-popupaddCardCloseButton.addEventListener('click', popupaddCardToggle);
+popupAddCardOpenButton.addEventListener('click', popupaddCardToggle);
+popupAddCardCloseButton.addEventListener('click', popupaddCardToggle);
 
 cardFormElement.addEventListener('submit', e => {
     e.preventDefault();
@@ -105,28 +104,28 @@ cardFormElement.addEventListener('submit', e => {
     popupaddCardToggle();
 })
 
-let Like = document.querySelectorAll('.element__like');
+let like = document.querySelectorAll('.element__like');
 
-Like.forEach((activButton) => {
+like.forEach((activButton) => {
     activButton.addEventListener('click', (evt) => {
-        const LikeTarget = evt.target;
-        LikeTarget.classList.toggle('element__like-active');
+        const likeTarget = evt.target;
+        likeTarget.classList.toggle('element__like-active');
     });
 });
 
 let figurePhoto = document.querySelectorAll('.element__image');
 let popupFigure = document.querySelector('.popup-image');
-let popupimgeText = popupFigure.querySelector('.popup-image__title');
-let popupimgePhoto = popupFigure.querySelector('.popup-image__photo');
-const popupimgeCloseButton = popupFigure.querySelector('.popup-image__close');
+let popupImgeText = popupFigure.querySelector('.popup-image__title');
+let popupImgePhoto = popupFigure.querySelector('.popup-image__photo');
+const popupImgeCloseButton = popupFigure.querySelector('.popup-image__close');
 
 figurePhoto.forEach((activePhoto) => {
     activePhoto.addEventListener('click', (evt) => {
         const figurePhotoTarget = evt.target;
         popupFigure.classList.toggle('popup-edit_opened');
-        popupimgePhoto.src = figurePhotoTarget.src;
+        popupImgePhoto.src = figurePhotoTarget.src;
         const figureCard = figurePhotoTarget.closest('.element__item');
-        popupimgeText.textContent = figureCard.querySelector('.element__title').textContent;
+        popupImgeText.textContent = figureCard.querySelector('.element__title').textContent;
     });
 });
 
@@ -134,4 +133,4 @@ const popupFigureToggle = function() {
     popupFigure.classList.toggle('popup-edit_opened')
 }
 
-popupimgeCloseButton.addEventListener('click', popupFigureToggle);
+popupImgeCloseButton.addEventListener('click', popupFigureToggle);

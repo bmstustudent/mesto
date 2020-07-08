@@ -1,4 +1,4 @@
-.popup-addCard {
+.popup-save {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .popup-addCard {
+    .popup-save {
         left: 40px;
         top: 210px;
         width: 240px;
