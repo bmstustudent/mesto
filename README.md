@@ -14,5 +14,5 @@
  - Функция закрытия popup кликом на overlay
  - Функция закрытия popup кликом на Esc
 
-![alt gif](https://github.com/bmstustudent/mesto/blob/develop/mesto.gif)
+![alt gif](https://github.com/bmstustudent/mesto/blob/develop/mesto-min.gif)
 
