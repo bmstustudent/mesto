@@ -10,5 +10,5 @@
 @import url(../blocks/popup-edit/popup-edit.css);
 @import url(../blocks/popup-save/popup-save.css);
 @import url(../blocks/popup-image/popup-image.css);
-@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/popup.css);
 @import url(../blocks/popup-edit/_opened/popup-edit_opened.css);
