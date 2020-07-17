@@ -14,5 +14,5 @@
  - Функция закрытия popup кликом на overlay
  - Функция закрытия popup кликом на Esc
 
-![alt gif](https://disk.yandex.ru/client/disk?source=domik-main&idApp=client&dialog=slider&idDialog=%2Fdisk%2Fmesto.gif)
+![alt gif](https://github.com/bmstustudent/mesto/blob/develop/mesto.gif)
 
