@@ -10,12 +10,15 @@
 
 <body class="root">
     <div class="page">
+
         <!--block HEADER-->
         <div class="header root__section">
             <img class="header__logo" src="./images/logo.svg" alt="логотип">
         </div>
         <!--end HEADER-->
+
         <main class="content">
+
             <!--block PROFILE-->
             <section class="profile">
                 <div class="profile__place">
@@ -33,10 +36,33 @@
                 <button class="profile__button-add" type="button"></button>
             </section>
             <!--конец блока PROFILE-->
+
+            <!--block CARDS-->
+            <section class="cards">
+                <ul class="cards__list"></ul>
+            </section>
+            <!--end CARDS-->
+
+            <!--шаблон карточки-->
+            <template class="template">
+                <li class="cards__item">
+                    <button class="cards__button-delete" type="button"></button>
+                    <img src="" alt="" class="cards__image">
+                    <div class="cards__place">
+                        <h2 class="cards__title"></h2>
+                        <button class="cards__button-like" type="button"></button>
+                    </div>
+                </li>
+            </template>
+            <!--конец шаблона-->
         </main>
+
+        <!--начало footer-->
         <footer class="footer">
             <p class="footer__author">&#169; 2020 Mesto Russia</p>
         </footer>
+        <!--конец footer-->
+
     </div>
 </body>
 
