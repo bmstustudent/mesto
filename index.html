@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Mesto</title>
+</head>
+
+<body class="root">
+    <div class="page">
+        <!--block HEADER-->
+        <div class="header root__section">
+            <img class="header__logo" src="./images/logo.svg" alt="логотип">
+        </div>
+        <!--end HEADER-->
+        <main class="content">
+            <!--block PROFILE-->
+            <section class="profile">
+                <div class="profile__place">
+                    <img src="./images/avatar.jpg" alt="фото профиля" class="profile__foto">
+                    <div class="profile__info">
+                        <div class="profile__items">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <!--кнопка редактирования профиля-->
+                            <button class="profile__button-edit" type="button"></button>
+                        </div>
+                        <p class="profile__job">Исследователь океана</p>
+                    </div>
+                </div>
+                <!--кнопка добавить карточку-->
+                <button class="profile__button-add" type="button"></button>
+            </section>
+            <!--конец блока PROFILE-->
+        </main>
+        <footer class="footer">
+            <p class="footer__author">&#169; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+</body>
+
+</html>
