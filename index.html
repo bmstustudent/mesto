@@ -42,18 +42,17 @@
                 <ul class="cards__list"></ul>
             </section>
             <!--end CARDS-->
-
             <!--шаблон карточки-->
             <template class="template">
-                <li class="cards__item">
-                    <button class="cards__button-delete" type="button"></button>
-                    <img src="" alt="" class="cards__image">
-                    <div class="cards__place">
-                        <h2 class="cards__title"></h2>
-                        <button class="cards__button-like" type="button"></button>
-                    </div>
-                </li>
-            </template>
+        <li class="cards__item">
+            <button class="cards__button-delete" type="button"></button>
+            <img src="" alt="" class="cards__image">
+            <div class="cards__place">
+                <h2 class="cards__title"></h2>
+                <button class="cards__button-like" type="button"></button>
+            </div>
+        </li>
+    </template>
             <!--конец шаблона-->
         </main>
 
@@ -63,7 +62,49 @@
         </footer>
         <!--конец footer-->
 
+        <!--кнопка редактирования профиля-->
+        <div class="popup-edit">
+            <div class="popup-edit__content">
+                <button type="button" class="popup-edit__close"></button>
+                <form class="popup-edit__form" action="#" method="POST" name="editProfile" novalidate>
+                    <h2 class="popup-edit__title">Редактировать профиль</h2>
+                    <input type="text" class="popup-edit__type" id="name" name="userName" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
+                    <span class="popup__input-error" id="name-input-error"></span>
+                    <input type="text" class="popup-edit__type" id="about" name="userAbout" placeholder="Исследователь океана" minlength="2" maxlength="200" required>
+                    <span class="popup__input-error" id="job-input-error"></span>
+                    <button class="popup-edit__button" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <!--кнопка добавления новой карточки-->
+        <div class="popup-save">
+            <div class="popup-edit__content">
+                <button type="button" class="popup-edit__close"></button>
+                <form class="popup-edit__form" action="#" method="POST" name="newCard" id="popup-save__form" novalidate>
+                    <h2 class="popup-edit__title">Новое место</h2>
+                    <input type="text" class="popup-edit__type" id="title" name="nameCard" placeholder="Название" id="place-input" minlength="1" maxlength="30" required>
+                    <span class="popup__input-error" id="place-input-error"></span>
+                    <input type="url" class="popup-edit__type" id="link" name="linkCard" placeholder="Ссылка на картинку">
+                    <span class="popup__input-error" id="link-input-error"></span>
+                    <button class="popup-edit__button" type="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+
+        <!--кнопка увеличения изображения-->
+        <div class="popup-image">
+            <figure class="popup-image__content">
+                <button type="button" class="popup-image__close"></button>
+                <img src="#" alt="" class="popup-image__photo">
+                <p class="popup-image__title"></p>
+            </figure>
+        </div>
+
     </div>
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/index.js"></script>
+
 </body>
 
 </html>

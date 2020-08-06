@@ -1,0 +1,28 @@
+.popup-edit__type {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 30px;
+    border-style: none;
+    padding: 0;
+    border-width: 0;
+    border-color: #FFF;
+    max-width: 358px;
+    width: 100%;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.popup-edit__type:invalid {
+    border: 1px solid red;
+}
+
+.popup-edit__type:valid {
+    border: 1px solid green;
+}
+
+@media screen and (width: 320px) {
+    .popup-edit__type {
+        margin-top: 20px;
+    }
+}
