@@ -1,8 +1,0 @@
-.cards__place {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    max-width: 246px;
-    margin: 25px 15px 31px 21px;
-}
