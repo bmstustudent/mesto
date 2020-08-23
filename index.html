@@ -64,16 +64,16 @@
         </footer>
         <!--конец footer-->
         <!--блок popup-edit-->
-        <section class="popup popup__edit">
+        <section class="popup">
             <div class="popup__container">
                 <button type="button" class="link popup__button-close"></button>
-                <form action="#" class="popup__form" method="post" name="editForm" novalidate>
+                <form action="#" class="popup__form popup__form_type_profile" method="post" name="editForm" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <input type="text" name="profile-name" placeholder="Имя" id="profile-name" class="input popup__input popup__input_type_name" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
                     <span class="popup__input-error js-popup__input-error_type_profile"></span>
                     <input type="text" name="profile-job" id="profile-job" placeholder="Хобби" class="input popup__input popup__input_type_job" minlength="2" maxlength="200" required>
                     <span class="popup__input-error js-popup__input-error_type_profile"></span>
-                    <button class="popup__button-edit" type="submit">Сохранить</button>
+                    <button class="link popup__button-save" type="submit">Сохранить</button>
                 </form>
             </div>
         </section>
@@ -81,8 +81,8 @@
         <!--блок popup-add-->
         <section class="popup popup__add">
             <div class="popup__container">
-                <button class="link popup__close-button"></button>
-                <form action="#" class="popup__form" method="post" name="addForm" novalidate>
+                <button class="link popup__button-close"></button>
+                <form action="#" class="popup__form popup__form_type_place" method="post" name="addForm" novalidate>
                     <h2 class="popup__title">Новое месте</h2>
                     <input type="text" name="place-name" placeholder="Название" id="place-name" class="input popup__input popup__input_type_place-name" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
                     <span class="popup__input-error"></span>
@@ -96,7 +96,7 @@
         <!--блок popup-image-->
         <section class="popup popup_type_picture-zoom" data-popup-img-name="popup_type_picture-zoom">
             <div class="popup__container-pic-zoom">
-                <button class="link popup__close-button"></button>
+                <button class="link popup__button-close"></button>
                 <figure class="picture-zoom">
                     <img src=# alt="Фото карточки" class="picture-zoom__img">
                     <p class="picture-zoom__title"></p>
@@ -104,7 +104,9 @@
             </div>
         </section>
     </div>
-
+    <script type="text/javascript" src="./scripts/utils.js"></script>
+    <script type="text/javascript" src="./scripts/index.js"></script>
 </body>
+
 
 </html>

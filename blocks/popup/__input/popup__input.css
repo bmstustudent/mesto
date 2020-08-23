@@ -6,14 +6,15 @@
     padding: 10px 0 10px 5px;
     width: 100%;
     margin-bottom: 35px;
-    
 }
 
 .popup__input::placeholder {
-    color: #C4C4C4;;
+    color: #C4C4C4;
+    ;
 }
+
 .popup__input:focus {
-    outline: 3px solid #6596F9;
+    outline: 2px solid gray;
 }
 
 @media screen and (max-width: 370px) {

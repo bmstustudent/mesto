@@ -1,4 +1,4 @@
-.popup__save-button {
+.popup__button-save {
     margin: 20px auto 0;
     border-radius: 2px;
     box-shadow: none;
@@ -10,8 +10,9 @@
     line-height: 1.2;
     outline: none;
 }
+
 @media screen and (max-width: 700px) {
-    .popup__save-button {
+    .popup__button-save {
         font-size: 14px;
     }
 }
