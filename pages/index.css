@@ -7,8 +7,4 @@
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/link/link.css.css);
-@import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/_type/popup_type_picture-zoom.css);
-@import url(../blocks/picture-zoom/picture-zoom.css);
 @import url(../blocks/footer/footer.css);
