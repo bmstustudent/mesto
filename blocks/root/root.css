@@ -2,13 +2,6 @@
 .root {
     background-color: black;
     min-height: 100vh;
-    padding-bottom: 194px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-@media screen and (max-width: 1024px) {
-    .root {
-        padding-bottom: 140px;
-    }
 }
