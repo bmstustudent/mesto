@@ -50,7 +50,7 @@
                     <img src=# alt="Фото карточки" class="card__image" data-img-trigger="popup_type_picture-zoom">
                     <div class="card__wrapper">
                     <h2 class="card__title"></h2>
-                    <button class="link card__button-like"></button>
+                    <button class="link card__button-like card__button-like_active"></button>
                     </div>
                 </figure> 
             </li>
@@ -79,33 +79,32 @@
         </section>
 
         <!--блок popup-add-->
-        <section class="popup popup__add">
+        <section class="popup-add">
             <div class="popup__container">
-                <button class="link popup__button-close"></button>
-                <form action="#" class="popup__form popup__form_type_place" method="post" name="addForm" novalidate>
-                    <h2 class="popup__title">Новое месте</h2>
-                    <input type="text" name="place-name" placeholder="Название" id="place-name" class="input popup__input popup__input_type_place-name" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
+                <button class="link popup-add__button-close"></button>
+                <form action="#" class="popup-add__form popup-add__form_type_place" method="post" name="addForm" novalidate>
+                    <h2 class="popup-add__title">Новое месте</h2>
+                    <input type="text" name="place-name" placeholder="Название" id="popup-add_name" class="input popup__input" minlength="2" maxlength="40" required pattern="[A-za-zА-яа-яЁё -]{1,}">
                     <span class="popup__input-error"></span>
-                    <input type="url" name="link" id="link" placeholder="Ссылка на картинку" class="input popup__input popup__input_type_place-pic" minlength="2" maxlength="200" required>
+                    <input type="url" name="link" id="link" placeholder="Ссылка на картинку" class="input popup__input" minlength="2" maxlength="200" required>
                     <span class="popup__input-error"></span>
-                    <button class="link popup__button-save popup__but-disabled" type="submit" disabled>Создать</button>
+                    <button class="link popup-add__button-save popup-add_disabled" type="submit" disabled="true">Создать</button>
                 </form>
             </div>
         </section>
 
         <!--блок popup-image-->
-        <section class="popup popup_type_picture-zoom" data-popup-img-name="popup_type_picture-zoom">
-            <div class="popup__container-pic-zoom">
-                <button class="link popup__button-close"></button>
-                <figure class="picture-zoom">
-                    <img src=# alt="Фото карточки" class="picture-zoom__img">
-                    <p class="picture-zoom__title"></p>
-                </figure>
-            </div>
+        <section class="popup-img">
+            <figure class="popup-img__bloc">
+                <div class="popup-img__close"></div>
+                <img src="#" alt="#" class="popup-img__foto">
+                <p class="popup-img__name"></p>
+            </figure>
         </section>
     </div>
     <script type="text/javascript" src="./scripts/utils.js"></script>
     <script type="text/javascript" src="./scripts/index.js"></script>
+    <script type="text/javascript" src="./scripts/validate.js"></script>
 </body>
 
 

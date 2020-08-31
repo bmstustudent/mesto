@@ -1,5 +1,4 @@
 @import url(./__container/popup__container.css);
-@import url(./__button-close/popup__button-close.css);
 @import url(./__form/popup__form.css);
 @import url(./__title/popup__title.css);
 @import url(./__input/popup__input.css);
@@ -8,6 +7,7 @@
 @import url(./__input-error/popup__input-error.css);
 @import url(./__input-error/_active/popup__input-error_active.css);
 @import url(./__container-pic-zoom/popup__container-pic-zoom.css);
+@import url(./__button-close/popup__button-close.css);
 .popup {
     position: fixed;
     top: 0;

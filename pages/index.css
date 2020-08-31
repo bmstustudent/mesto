@@ -6,11 +6,13 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/card/card.css);
+@import url(../blocks/popup-img/popup-img.css);
 @import url(../blocks/link/link.css.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/picture-zoom/picture-zoom.css);
-
-/* @import url(../blocks/popup/_type/popup_type_picture-zoom.css); */
-
+@import url(../blocks/popup-add/popup-add.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+
+/* @import url(../blocks/card/__button-like/_active/card__button-like_active.css); */
+
+@import url(../blocks/popup-add/_opened/popup-add_opened.css);

@@ -1,0 +1,25 @@
+.popup-img__close {
+    position: absolute;
+    right: -38px;
+    top: -38px;
+    width: 40.7px;
+    height: 40.7px;
+    cursor: pointer;
+    background-image: url(../../../images/close-button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup-img__close:hover {
+    outline: none;
+    background-image: url(../../../images/close-button.svg);
+}
+
+@media only screen and (max-width: 490px) {
+    .popup-img__close {
+        width: 30px;
+        height: 30px;
+        right: -32px;
+        top: -32px;
+    }
+}

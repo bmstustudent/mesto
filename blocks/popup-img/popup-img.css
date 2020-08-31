@@ -1,0 +1,18 @@
+@import url(./__bloc/popup-img__bloc.css);
+@import url(./__close/popup-img__close.css);
+@import url(./__foto/popup-img__foto.css);
+@import url(./__name/popup-img__name.css);
+.popup-img {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    visibility: hidden;
+}
