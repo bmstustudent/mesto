@@ -1,3 +1,5 @@
+@import url(./_name/popup__input_name.css);
+@import url(./_job/popup__input_job.css);
 .popup__input {
     font-size: 14px;
     line-height: 1.2;
