@@ -39,5 +39,5 @@
 - закрытие попапа нажатием на Esc
 
 # Пример, как работает открыть/закрыть popup:
-![alt gif](https://github.com/bmstustudent/mesto/blob/develop/mesto-min.gif)
+![alt gif](https://github.com/bmstustudent/mesto/blob/master/mesto-gif.gif)
 
