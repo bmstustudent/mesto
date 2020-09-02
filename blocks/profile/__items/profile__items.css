@@ -1,0 +1,6 @@
+.profile__items {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    align-items: center;
+}

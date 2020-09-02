@@ -1,0 +1,15 @@
+.popup__prof-name {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 30px;
+    border-style: none;
+    padding: 0;
+    border-width: 0;
+    border-color: #FFF;
+    max-width: 358px;
+    width: 100%;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 5px;
+}
