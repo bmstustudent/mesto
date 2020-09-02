@@ -1,7 +1,0 @@
-@import url(./__section/root__section.css);
-.root {
-    background-color: black;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}

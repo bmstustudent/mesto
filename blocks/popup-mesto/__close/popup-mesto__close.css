@@ -1,0 +1,26 @@
+.popup-mesto__close {
+    position: absolute;
+    right: -38px;
+    top: -38px;
+    width: 40.7px;
+    height: 40.7px;
+    cursor: pointer;
+    background-image: url(../../../images/close-button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup-mesto__close:hover {
+    outline: none;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 520px) {
+    .popup-mesto__close {
+        width: 30px;
+        height: 30px;
+        right: -29px;
+        top: -29px;
+    }
+}

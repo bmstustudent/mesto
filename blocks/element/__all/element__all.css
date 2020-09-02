@@ -1,0 +1,8 @@
+.element__all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 246px;
+    margin: 19px auto 0;
+}

@@ -12,7 +12,8 @@
 
 .popup-img__close:hover {
     outline: none;
-    background-image: url(../../../images/close-button.svg);
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 490px) {

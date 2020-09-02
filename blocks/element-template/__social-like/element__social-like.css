@@ -1,0 +1,21 @@
+.element__social-like {
+    background-image: url(../../../images/like-button.svg);
+    background-size: contain;
+    height: 18.13px;
+    width: 20.76px;
+    background-repeat: no-repeat;
+    border: 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.element__social-like:active,
+.element__social-like:focus {
+    outline: 0;
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in;
+}
+
+.element__social-like:hover {
+    opacity: 0.6;
+}

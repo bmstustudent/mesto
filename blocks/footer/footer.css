@@ -1,17 +1,17 @@
-@import url(./__author/footer__author.css);
+@import url(./__autor/footer__autor.css);
 .footer {
     max-width: 882px;
     display: flex;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 881px) {
+@media only screen and (max-width: 881px) {
     .footer {
         width: 90%;
     }
 }
 
-@media screen and (max-width: 582px) {
+@media only screen and (max-width: 582px) {
     .footer {
         max-width: 282px;
     }
