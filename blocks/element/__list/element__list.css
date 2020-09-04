@@ -3,24 +3,7 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 282px);
-    grid-template-rows: repeat(2, 361px);
-    grid-row-gap: 21px;
-    grid-column-gap: 18px;
-}
-
-@media only screen and (max-width: 881px) {
-    .element__list {
-        grid-template-columns: repeat(2, 282px);
-        grid-template-rows: repeat(3, 361px);
-    }
-}
-
-@media only screen and (max-width: 581px) {
-    .element__list {
-        margin-top: 36px;
-        grid-row-gap: 20px;
-        grid-template-columns: repeat(1, 282px);
-        grid-template-rows: repeat(6, 361px);
-    }
+    grid-template-columns: repeat(auto-fill, 282px);
+    grid-gap: 18px 18px;
+    justify-content: center;
 }
