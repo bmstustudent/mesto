@@ -8,7 +8,7 @@
     <title>Mesto</title>
 </head>
 
-<body>
+<body class="root">
     <div class="page">
         <div class="header">
             <img class="header__logo" src="./images/logo.svg" alt="логотип"></img>
@@ -45,7 +45,7 @@
         <!--конец блока footer-->
 
         <!--попап открытия кнопки редактирования popup-edit-->
-        <div class="popup">
+        <div class="popup" data-type="profile">
             <div class="popup-container">
                 <button type="button" class="popup__button-close"></button>
                 <form class="popup__content form" action="#" method="POST" name="editProfile" novalidate>
@@ -65,7 +65,7 @@
         <!--конец popup-edit-->
 
         <!--попап открытия кнопки добавить popup-add-->
-        <section class="popup-mesto">
+        <section class="popup-mesto" data-type="add">
             <div class="popup-container">
                 <div class="popup-mesto__close"></div>
                 <form class="popup-mesto__content form" name="addElCards" novalidate>
@@ -86,7 +86,7 @@
         <!--конец popup-add-->
 
         <!--попап увеличения фото popup-zoom-->
-        <section class="popup-img">
+        <section class="popup-img" data-type="image">
             <figure class="popup-img__bloc">
                 <div class="popup-img__close"></div>
                 <img src="#" alt="#" class="popup-img__foto">
