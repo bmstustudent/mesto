@@ -1,6 +1,7 @@
 const root = document.querySelector('.root');
 
 const profile = root.querySelector('.profile');
+
 const profName = profile.querySelector('.profile__name');
 const profText = profile.querySelector('.profile__job');
 const popupOpenButton = profile.querySelector('.profile__button-edit')
@@ -13,6 +14,7 @@ const socialLike = document.querySelectorAll('.element__social-like');
 
 //popup-edit
 const popupProfile = document.querySelector('.popup[data-type="profile"]');
+const formProfile = popupProfile.querySelector('#form-profile');
 const formElement = popupProfile.querySelector('.popup__content');
 const nameInput = formElement.querySelector('.popup__prof-name');
 const jobInput = formElement.querySelector('.popup__prof-text');
@@ -57,8 +59,16 @@ function closePopupOverlay(popup) {
 const popupToggleProf = function(event) {
     nameInput.value = profName.textContent;
     jobInput.value = profText.textContent;
-    togglePopup(popupProfile)
-};
+    togglePopup(popupProfile);
+}
+const saveProfile = function(event) {
+    event.preventDefault();
+    profName.textContent = nameInput.value;
+    profText.textContent = jobInput.value;
+    togglePopup(popupProfile);
+}
+
+formProfile.addEventListener('submit', saveProfile);
 
 const placePopupToggle = function() {
     editPlacePopup.classList.toggle('popup__opened');
@@ -71,7 +81,7 @@ function formSubmitHandler(evt) {
     evt.preventDefault();
     profName.textContent = nameInput.value;
     profText.textContent = jobInput.value;
-    popupToggle(editPlacePopup);
+    togglePopup(editPlacePopup);
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
@@ -101,15 +111,15 @@ figureFoto.forEach((activeFoto) => {
         popupImgFoto.src = figureFotoTarget.src;
         const figureCard = figureFotoTarget.closest('.element__group');
         popupImgText.textContent = figureCard.querySelector('.element__text').textContent;
-    });
-});
+    })
+})
 
 socialLike.forEach((activButton) => {
     activButton.addEventListener('click', (evt) => {
         const socialLikeTarget = evt.target;
         socialLikeTarget.classList.toggle('element__social-likeactiv');
-    });
-});
+    })
+})
 
 const escCode = 27;
 document.body.addEventListener('keyup', function(e) {
@@ -117,8 +127,8 @@ document.body.addEventListener('keyup', function(e) {
         popupProfile.classList.remove('popup__opened');
         editPlacePopup.classList.remove('popup__opened');
         popupFigure.classList.remove('popup__opened');
-    };
-}, false);
+    }
+}, false)
 
 cardFormElement.addEventListener('submit', e => {
     e.preventDefault();
@@ -126,7 +136,7 @@ cardFormElement.addEventListener('submit', e => {
     const link = cardInputLinkEl.value;
     generateCard(name, link);
     cardFormElement.reset();
-    popupToggle(editPlacePopup);
+    placePopupToggle();
 })
 
 popupOpenButton.addEventListener('click', () => { popupToggleProf(popupProfile) });
