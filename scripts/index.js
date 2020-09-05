@@ -57,10 +57,11 @@ function closePopupOverlay(popup) {
 const popupToggleProf = function(event) {
     nameInput.value = profName.textContent;
     jobInput.value = profText.textContent;
+    togglePopup(popupProfile)
 };
 
 const placePopupToggle = function() {
-    editPlacePopup.classList.toggle('popup-mesto__opened');
+    editPlacePopup.classList.toggle('popup__opened');
     cardFormSubmitButton.setAttribute('disabled', true);
     cardFormSubmitButton.classList.add('popup__but-disabled');
     cardFormSubmitButton.classList.remove('popup__button-save');
@@ -70,7 +71,7 @@ function formSubmitHandler(evt) {
     evt.preventDefault();
     profName.textContent = nameInput.value;
     profText.textContent = jobInput.value;
-    popupToggle();
+    popupToggle(editPlacePopup);
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
@@ -110,11 +111,11 @@ socialLike.forEach((activButton) => {
     });
 });
 
+const escCode = 27;
 document.body.addEventListener('keyup', function(e) {
-    const escCode = 27;
     if (e.keyCode === escCode) {
-        popup.classList.remove('popup__opened');
-        editPlacePopup.classList.remove('popup-mesto__opened');
+        popupProfile.classList.remove('popup__opened');
+        editPlacePopup.classList.remove('popup__opened');
         popupFigure.classList.remove('popup__opened');
     };
 }, false);
@@ -123,18 +124,18 @@ cardFormElement.addEventListener('submit', e => {
     e.preventDefault();
     const name = cardInputElement.value;
     const link = cardInputLinkEl.value;
-    cardFormElement.reset();
     generateCard(name, link);
-    placePopupToggle();
+    cardFormElement.reset();
+    popupToggle(editPlacePopup);
 })
 
-popupOpenButton.addEventListener('click', () => { togglePopup(popupProfile) });
+popupOpenButton.addEventListener('click', () => { popupToggleProf(popupProfile) });
 openPlacePopupButton.addEventListener('click', () => { togglePopup(editPlacePopup) });
 popupFigure.addEventListener('click', () => { togglePopup(popupFigure) })
 
 popupCloseButton.addEventListener('click', () => { closePopupToggle(popupProfile) });
 closePlacePopupButton.addEventListener('click', () => { closePopupToggle(editPlacePopup) });
-popupImgCloseButton.addEventListener('click', () => { closePopupToggle(popupFigure) });
+popupImgCloseButton.addEventListener('click', () => { closePopupToggle(popupImgCloseButton) });
 
 popupProfile.addEventListener('click', () => { closePopupOverlay(popupProfile) })
 editPlacePopup.addEventListener('click', () => { closePopupOverlay(editPlacePopup) })
