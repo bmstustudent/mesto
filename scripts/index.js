@@ -16,9 +16,8 @@ const escCode = 27;
 //popup-edit
 const popupProfile = document.querySelector('.popup[data-type="profile"]');
 const formProfile = popupProfile.querySelector('#form-profile');
-const formElement = popupProfile.querySelector('.popup__content');
-const nameInput = formElement.querySelector('.popup__prof-name');
-const jobInput = formElement.querySelector('.popup__prof-text');
+const nameInput = formProfile.querySelector('.popup__prof-name');
+const jobInput = formProfile.querySelector('.popup__prof-text');
 const popupCloseButton = popupProfile.querySelector('.popup__button-close')
 const profFormSubmitButton = popupProfile.querySelector('.popup__button-save');
 
@@ -84,7 +83,7 @@ function formSubmitHandler(evt) {
     togglePopup(editPlacePopup);
 }
 
-formElement.addEventListener('submit', formSubmitHandler);
+cardFormSubmitButton.addEventListener('submit', formSubmitHandler);
 
 function generateCard(name, link) {
     const card = cardTemplateElement.content.cloneNode(true);
