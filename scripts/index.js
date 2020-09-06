@@ -11,6 +11,7 @@ const elementEL = root.querySelector('.element');
 const cardsList = document.querySelector('.element__list');
 const cardTemplateElement = document.querySelector('.element-template');
 const socialLike = document.querySelectorAll('.element__social-like');
+const escCode = 27;
 
 //popup-edit
 const popupProfile = document.querySelector('.popup[data-type="profile"]');
@@ -55,9 +56,6 @@ function closePopupOverlay(popup) {
     togglePopup(event.target.closest('.popup__opened'));
 }
 
-
-
-
 const popupToggleProf = function(event) {
     nameInput.value = profName.textContent;
     jobInput.value = profText.textContent;
@@ -71,10 +69,6 @@ const saveProfile = function(event) {
 }
 
 formProfile.addEventListener('submit', saveProfile);
-
-
-
-
 
 const placePopupToggle = function() {
     editPlacePopup.classList.toggle('popup__opened');
@@ -91,11 +85,6 @@ function formSubmitHandler(evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
-
-
-
-
-
 
 function generateCard(name, link) {
     const card = cardTemplateElement.content.cloneNode(true);
@@ -132,12 +121,10 @@ socialLike.forEach((activButton) => {
     })
 })
 
-const escCode = 27;
 document.body.addEventListener('keyup', function(e) {
+    const openedPopup = document.querySelector('.popup__opened');
     if (e.keyCode === escCode) {
-        popupProfile.classList.remove('popup__opened');
-        editPlacePopup.classList.remove('popup__opened');
-        popupFigure.classList.remove('popup__opened');
+        togglePopup(openedPopup)
     }
 }, false)
 
@@ -156,7 +143,7 @@ imageZoom.addEventListener('click', () => { togglePopup(imageZoom) })
 
 popupCloseButton.addEventListener('click', () => { togglePopup(popupProfile) })
 closePlacePopupButton.addEventListener('click', () => { togglePopup(editPlacePopup) });
-popupImgCloseButton.addEventListener('click', () => { togglePopup(popupImgCloseButton) });
+popupImgCloseButton.addEventListener('click', () => { togglePopup(popupFigure) });
 
 popupProfile.addEventListener('click', () => { closePopupOverlay(popupProfile) })
 editPlacePopup.addEventListener('click', () => { closePopupOverlay(editPlacePopup) })
