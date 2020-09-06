@@ -12,6 +12,7 @@
     border: none;
     box-shadow: none;
     object-fit: contain;
+    outline: none;
 }
 
 .popup-img__close:hover {
