@@ -68,7 +68,7 @@
         <section class="popup-mesto" data-type="add">
             <div class="popup-container">
                 <div class="popup-mesto__close"></div>
-                <form class="popup-mesto__content form" name="addElCards" novalidate>
+                <form class="popup-mesto__content form" action="#" method="POST" name="addElCards" id="form-mesto" novalidate>
                     <h2 class="popup-mesto__title">Новое место</h2>
                     <div class="popup-mesto__control popup__control">
                         <input type="text" class="popup-mesto__prof-name popup__input" placeholder="Название" name="nameElCards" required minlength="1" maxlength="30">
@@ -85,10 +85,10 @@
         </section>
         <!--конец popup-add-->
 
-        <!--попап увеличения фото popup-zoom-->
+        <!--попап увеличения фото popup-img-->
         <section class="popup-img" data-type="image">
             <figure class="popup-img__bloc">
-                <div class="popup-img__close"></div>
+                <button type="button" class="popup-img__close"></button>
                 <img src="#" alt="#" class="popup-img__foto">
                 <p class="popup-img__name"></p>
             </figure>

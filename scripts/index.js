@@ -31,6 +31,7 @@ const cardFormSubmitButton = cardFormElement.querySelector('.popup-mesto__button
 
 //popup-img
 const popupFigure = document.querySelector('.popup-img[data-type="image"]');
+const imageZoom = document.querySelector('.popup-img__foto');
 const popupImgText = popupFigure.querySelector('.popup-img__name');
 const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
 const popupImgCloseButton = popupFigure.querySelector('.popup-img__close');
@@ -40,21 +41,22 @@ initialCards.forEach(function(element) {
 });
 const figureFoto = cardsList.querySelectorAll('.element__foto');
 
-//функция открытия попап
+//функция открытия/закрытия попап
 function togglePopup(popup) {
-    popup.classList.toggle('popup__opened');
-}
-
-//функция закрытия попап (кнопкой)
-function closePopupToggle(popup) {
-    popup.classList.remove('popup__opened');
+    if (!popup.classList.contains('popup__opened')) {
+        popup.classList.remove('popup__opened')
+    }
+    popup.classList.toggle('popup__opened')
 }
 
 //закрытие попапов на оверлей.
 function closePopupOverlay(popup) {
     if (event.target !== event.currentTarget) { return }
-    popup.classList.remove('popup__opened')
+    togglePopup(event.target.closest('.popup__opened'));
 }
+
+
+
 
 const popupToggleProf = function(event) {
     nameInput.value = profName.textContent;
@@ -69,6 +71,10 @@ const saveProfile = function(event) {
 }
 
 formProfile.addEventListener('submit', saveProfile);
+
+
+
+
 
 const placePopupToggle = function() {
     editPlacePopup.classList.toggle('popup__opened');
@@ -85,6 +91,11 @@ function formSubmitHandler(evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+
+
+
+
+
 
 function generateCard(name, link) {
     const card = cardTemplateElement.content.cloneNode(true);
@@ -141,11 +152,11 @@ cardFormElement.addEventListener('submit', e => {
 
 popupOpenButton.addEventListener('click', () => { popupToggleProf(popupProfile) });
 openPlacePopupButton.addEventListener('click', () => { togglePopup(editPlacePopup) });
-popupFigure.addEventListener('click', () => { togglePopup(popupFigure) })
+imageZoom.addEventListener('click', () => { togglePopup(imageZoom) })
 
-popupCloseButton.addEventListener('click', () => { closePopupToggle(popupProfile) });
-closePlacePopupButton.addEventListener('click', () => { closePopupToggle(editPlacePopup) });
-popupImgCloseButton.addEventListener('click', () => { closePopupToggle(popupImgCloseButton) });
+popupCloseButton.addEventListener('click', () => { togglePopup(popupProfile) })
+closePlacePopupButton.addEventListener('click', () => { togglePopup(editPlacePopup) });
+popupImgCloseButton.addEventListener('click', () => { togglePopup(popupImgCloseButton) });
 
 popupProfile.addEventListener('click', () => { closePopupOverlay(popupProfile) })
 editPlacePopup.addEventListener('click', () => { closePopupOverlay(editPlacePopup) })
