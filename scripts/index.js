@@ -43,9 +43,6 @@ const figureFoto = cardsList.querySelectorAll('.element__foto');
 
 //функция открытия/закрытия попап
 function togglePopup(popup) {
-    if (!popup.classList.contains('popup__opened')) {
-        popup.classList.remove('popup__opened')
-    }
     popup.classList.toggle('popup__opened')
 }
 
