@@ -1,4 +1,4 @@
-const initialCards = [{
+export default [{
         name: 'Карачаево-Черкесия',
         link: 'https://images.unsplash.com/photo-1575631687630-f58400f0964f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=708&q=80'
     },

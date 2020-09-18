@@ -1,3 +1,6 @@
+import initialCards from './utils.js';
+
+
 const root = document.querySelector('.root');
 
 const profile = root.querySelector('.profile');
