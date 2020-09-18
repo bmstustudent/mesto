@@ -1,5 +1,5 @@
 import initialCards from './utils.js';
-
+import FormValidator from './FormValidator.js';
 
 const root = document.querySelector('.root');
 
