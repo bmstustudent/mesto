@@ -1,4 +1,5 @@
 import initialCards from './utils.js';
+import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 const root = document.querySelector('.root');
@@ -15,6 +16,7 @@ const cardsList = document.querySelector('.element__list');
 const cardTemplateElement = document.querySelector('.element-template');
 const socialLike = document.querySelectorAll('.element__social-like');
 const escCode = 27;
+const formElement = root.querySelector('.popup__content');
 
 //popup-edit
 const popupProfile = document.querySelector('.popup[data-type="profile"]');
@@ -26,11 +28,11 @@ const profFormSubmitButton = popupProfile.querySelector('.popup__button-save');
 
 //popup-add
 const editPlacePopup = document.querySelector('.popup-mesto[data-type="add"]');
-const cardFormElement = editPlacePopup.querySelector('.popup-mesto__content');
-const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name');
-const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
+const formPlace = editPlacePopup.querySelector('#form-mesto');
+const cardInputElement = formPlace.querySelector('.popup-mesto__prof-name');
+const cardInputLinkEl = formPlace.querySelector('.popup-mesto__prof-text');
 const closePlacePopupButton = editPlacePopup.querySelector('.popup-mesto__close');
-const cardFormSubmitButton = cardFormElement.querySelector('.popup-mesto__button-save');
+const cardFormSubmitButton = formPlace.querySelector('.popup-mesto__button-save');
 
 //popup-img
 const popupFigure = document.querySelector('.popup-img[data-type="image"]');
@@ -39,15 +41,19 @@ const popupImgText = popupFigure.querySelector('.popup-img__name');
 const popupImgFoto = popupFigure.querySelector('.popup-img__foto');
 const popupImgCloseButton = popupFigure.querySelector('.popup-img__close');
 
-initialCards.forEach(function(element) {
-    generateCard(element.name, element.link);
+
+initialCards.forEach(el => {
+    addCard(el.title, el.link)
 });
-const figureFoto = cardsList.querySelectorAll('.element__foto');
+// const figureFoto = cardsList.querySelectorAll('.element__foto');
 
 //функция открытия/закрытия попап
 function togglePopup(popup) {
     popup.classList.toggle('popup__opened')
 }
+
+
+
 
 //закрытие попапов на оверлей.
 function closePopupOverlay(popup) {
@@ -74,6 +80,7 @@ const placePopupToggle = function() {
     cardFormSubmitButton.setAttribute('disabled', true);
     cardFormSubmitButton.classList.add('popup__but-disabled');
     cardFormSubmitButton.classList.remove('popup__button-save');
+    addPlaceValidator()
 }
 
 function formSubmitHandler(evt) {
@@ -83,42 +90,16 @@ function formSubmitHandler(evt) {
     togglePopup(editPlacePopup);
 }
 
-cardFormSubmitButton.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', formSubmitHandler);
 
-function generateCard(name, link) {
-    const card = cardTemplateElement.content.cloneNode(true);
-    card.querySelector('.element__delete-but').addEventListener('click', deleteCard);
-    card.querySelector('.element__text').textContent = name;
-    card.querySelector('.element__foto').alt = name;
-    card.querySelector('.element__foto').src = link;
-    addCard(card);
-}
-
-function addCard(card) {
-    cardsList.prepend(card);
-}
-
-function deleteCard(event) {
-    const card = event.target.closest('.element__group');
-    card.remove();
-}
-
-figureFoto.forEach((activeFoto) => {
-    activeFoto.addEventListener('click', (evt) => {
-        const figureFotoTarget = evt.target;
-        popupFigure.classList.toggle('popup__opened');
-        popupImgFoto.src = figureFotoTarget.src;
-        const figureCard = figureFotoTarget.closest('.element__group');
-        popupImgText.textContent = figureCard.querySelector('.element__text').textContent;
-    })
-})
-
-socialLike.forEach((activButton) => {
-    activButton.addEventListener('click', (evt) => {
-        const socialLikeTarget = evt.target;
-        socialLikeTarget.classList.toggle('element__social-likeactiv');
-    })
-})
+// function generateCard(name, link) {
+//     const card = cardTemplateElement.content.cloneNode(true);
+//     card.querySelector('.element__delete-but').addEventListener('click', deleteCard);
+//     card.querySelector('.element__text').textContent = name;
+//     card.querySelector('.element__foto').alt = name;
+//     card.querySelector('.element__foto').src = link;
+//     addCard(card);
+// }
 
 document.body.addEventListener('keyup', function(e) {
     const openedPopup = document.querySelector('.popup__opened');
@@ -127,12 +108,52 @@ document.body.addEventListener('keyup', function(e) {
     }
 }, false)
 
-cardFormElement.addEventListener('submit', e => {
+
+function addCard(title, link) {
+    const templateSelector = '.element-template'
+    const card = new Card(title, link, templateSelector)
+    const cardsList = document.querySelector('.element__list')
+    cardsList.prepend(card.generate())
+}
+
+const formElementHandler = e => {
+    e.preventDefault();
+    const title = cardInputElement.value;
+    const link = cardInputLinkEl.value;
+    cardFormElement.reset();
+    addCard(title, link)
+    togglePopup();
+}
+
+// function deleteCard(event) {
+//     const card = event.target.closest('.element__group');
+//     card.remove();
+// }
+
+// figureFoto.forEach((activeFoto) => {
+//     activeFoto.addEventListener('click', (evt) => {
+//         const figureFotoTarget = evt.target;
+//         popupFigure.classList.toggle('popup__opened');
+//         popupImgFoto.src = figureFotoTarget.src;
+//         const figureCard = figureFotoTarget.closest('.element__group');
+//         popupImgText.textContent = figureCard.querySelector('.element__text').textContent;
+//     })
+// })
+
+// socialLike.forEach((activButton) => {
+//     activButton.addEventListener('click', (evt) => {
+//         const socialLikeTarget = evt.target;
+//         socialLikeTarget.classList.toggle('element__social-likeactiv');
+//     })
+// })
+
+
+formPlace.addEventListener('submit', e => {
     e.preventDefault();
     const name = cardInputElement.value;
     const link = cardInputLinkEl.value;
     generateCard(name, link);
-    cardFormElement.reset();
+    formPlace.reset();
     placePopupToggle();
 })
 
@@ -147,3 +168,32 @@ popupImgCloseButton.addEventListener('click', () => { togglePopup(popupFigure) }
 popupProfile.addEventListener('click', () => { closePopupOverlay(popupProfile) })
 editPlacePopup.addEventListener('click', () => { closePopupOverlay(editPlacePopup) })
 popupFigure.addEventListener('click', () => { closePopupOverlay(popupFigure) })
+
+
+
+function addPlaceValidator() {
+    const settingAddPlaceValidation = {
+        form: '.popup-mesto__content',
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup-mesto__button-save',
+    }
+
+    const addPlaceValidation = new FormValidator(settingAddPlaceValidation)
+    addPlaceValidation.enableValidation()
+}
+
+
+function addCardValidator() {
+    const settingAddCardValidation = {
+        form: '.popup__content',
+        input: '.popup__input',
+        errorSelector: '.popup__error',
+        controlSelector: '.popup__control',
+        button: '.popup__button-save',
+    }
+
+    const addCardValidation = new FormValidator(settingAddCardValidation)
+    addCardValidation.enableValidation()
+}
