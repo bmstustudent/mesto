@@ -1,3 +1,7 @@
+export const popupFigure = document.querySelector('.popup-img[data-type="image"]');
+export const popupZoom = document.querySelector('.popup-img__foto');
+export const popupImgText = popupFigure.querySelector('.popup-img__name');
+
 export const initialCards = [{
         name: 'Карачаево-Черкесия',
         link: 'https://images.unsplash.com/photo-1575631687630-f58400f0964f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=708&q=80'

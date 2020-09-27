@@ -1,4 +1,4 @@
-import { initialCards } from './utils.js';
+import { initialCards } from './constants.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
@@ -25,6 +25,7 @@ const cardInputElement = cardFormElement.querySelector('.popup-mesto__prof-name'
 const cardInputLinkEl = cardFormElement.querySelector('.popup-mesto__prof-text');
 const closePlacePopupButton = editPlacePopup.querySelector('.popup-mesto__close');
 const cardFormSubmitButton = cardFormElement.querySelector('.popup-mesto__button-save');
+const cardsList = document.querySelector('.element__list')
 
 //popup-img
 const popupFigure = document.querySelector('.popup-img[data-type="image"]');
@@ -68,10 +69,13 @@ function togglePopup(popup) {
 }
 
 //закрытие попапов на оверлей.
-function closePopupOverlay(popup) {
-    if (event.target !== event.currentTarget) { return }
-    togglePopup(event.target.closest('.popup__opened'));
+export const closePopupOverlay = (event) => {
+    if (event.target === event.currentTarget) {
+        document.body.removeEventListener('keydown', escHandlerclosepopup);
+        togglePopup(event.target.closest('.popup__opened'));
+    }
 }
+
 //закрытие попапов по esc
 const escHandlerclosepopup = function(event) {
     const openedPopup = document.querySelector('.popup__opened');
@@ -79,9 +83,10 @@ const escHandlerclosepopup = function(event) {
         togglePopup(openedPopup);
     }
 }
-export default escHandlerclosepopup;
 
-const popupToggleProf = function(event) {
+export { escHandlerclosepopup };
+
+const popupToggleProf = function() {
     nameInput.value = profName.textContent;
     jobInput.value = profText.textContent;
     togglePopup(popupProfile);
@@ -95,19 +100,9 @@ const saveProfile = function(event) {
 
 formProfile.addEventListener('submit', saveProfile);
 
-const placePopupToggle = function() {
-    editPlacePopup.classList.toggle('popup-mesto__opened');
-    cardFormSubmitButton.setAttribute('disabled', true);
-    cardFormSubmitButton.classList.add('popup__but-disabled');
-    cardFormSubmitButton.classList.remove('popup__button-save');
-    FormValidator.clearErrors()
-    togglePopup(editPlacePopup);
-}
-
 function addCard(title, link) {
     const templateSelector = '.element-template'
     const card = new Card(title, link, templateSelector)
-    const cardsList = document.querySelector('.element__list')
     cardsList.prepend(card.generate())
 }
 
@@ -134,6 +129,6 @@ popupCloseButton.addEventListener('click', () => { togglePopup(popupProfile) })
 closePlacePopupButton.addEventListener('click', () => { togglePopup(editPlacePopup) });
 popupImgCloseButton.addEventListener('click', () => { togglePopup(popupFigure) });
 
-popupProfile.addEventListener('click', () => { closePopupOverlay(popupProfile) })
-editPlacePopup.addEventListener('click', () => { closePopupOverlay(editPlacePopup) })
-popupFigure.addEventListener('click', () => { closePopupOverlay(popupFigure) })
+document.querySelectorAll('.popup').forEach((popup) => {
+    popup.addEventListener('click', closePopupOverlay);
+});

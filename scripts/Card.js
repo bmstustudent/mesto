@@ -1,17 +1,16 @@
-import escHandlerclosepopup from './index.js';
-
-const popupFigure = document.querySelector('.popup-img[data-type="image"]');
-const popupZoom = document.querySelector('.popup-img__foto');
-const popupImgText = popupFigure.querySelector('.popup-img__name');
-
+import { escHandlerclosepopup } from './index.js';
+import { popupFigure } from './constants.js';
+import { popupZoom } from './constants.js';
+import { popupImgText } from './constants.js';
+import { closePopupOverlay } from "./index.js";
 
 export default class Card {
     constructor(title, imgLink, template) {
         this._title = title
         this._imgLink = imgLink
-        this._template = template
-        this._card = document.querySelector(this._template).content.cloneNode(true);
-        this._photo = this._card.querySelector('.element__foto')
+        this._card = document.querySelector(template).content.cloneNode(true);
+        this._photo = this._card.querySelector('.element__foto');
+        this._closeBtn = document.querySelector('.popup-img__close');
     }
 
     _deleteCardHandler(event) {
@@ -19,16 +18,20 @@ export default class Card {
         card.remove();
     }
 
+    _photoViewCloseHandler() {
+        popupFigure.classList.remove('popup__opened');
+    }
+
     _photoViewHandler() {
         document.body.addEventListener('keydown', escHandlerclosepopup);
-
+        popupFigure.addEventListener('keydown', event => {
+            closePopupOverlay(event, this._photoViewCloseHandler)
+        })
 
         // Открытие popup
         popupFigure.classList.toggle('popup__opened');
-
         popupZoom.src = this._imgLink;
         popupImgText.textContent = this._title
-
     }
 
     _likeHandler(event) {
