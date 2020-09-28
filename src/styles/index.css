@@ -1,0 +1,15 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/font.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/element/element.css);
+@import url(../blocks/popup-container/popup-container.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup-mesto/popup-mesto.css);
+@import url(../blocks/element-template/element-template.css);
+@import url(../blocks/popup-img/popup-img.css);
+@import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/element-template/__social-likeactiv/element__social-likeactiv.css);
+@import url(../blocks/popup-mesto/__opened/popup-mesto__opened.css);
