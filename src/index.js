@@ -1,6 +1,13 @@
-import { initialCards } from './constants.js';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
+import './styles/index.css';
+
+import { initialCards } from './components/constants.js';
+import Card from './components/Card.js';
+import FormValidator from './components/FormValidator.js';
+
+import Section from './components/Section.js';
+import UserInfo from './components/UserInfo.js';
+import PopupWithForm from './components/PopupWithForm.js';
+import PopupWithImage from './components/PopupWithImage.js';
 
 const root = document.querySelector('.root');
 

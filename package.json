@@ -1,0 +1,23 @@
+{
+    "name": "mesto",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmstustudent/mesto.git"
+    },
+    "author": "Shults Pavel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bmstustudent/mesto/issues"
+    },
+    "homepage": "https://github.com/bmstustudent/mesto#readme",
+    "devDependencies": {
+        "webpack": "^4.44.2",
+        "webpack-cli": "^3.3.12"
+    }
+}
