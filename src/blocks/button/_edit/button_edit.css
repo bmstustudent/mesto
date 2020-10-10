@@ -1,0 +1,25 @@
+.button_edit {
+    background-image: url('../../../images/edit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    background-color: #000000;
+    border: none;
+    transition: opacity 0.3s ease-in;
+}
+
+@media screen and (max-width: 700px){
+    .button_edit {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .button_edit {
+        width: 18px;
+        height: 18px;
+    }
+}

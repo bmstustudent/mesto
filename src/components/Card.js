@@ -1,65 +1,41 @@
-// import { escHandlerclosepopup } from './index.js';
-// import { popupFigure } from './constants.js';
-// import { popupZoom } from './constants.js';
-// import { popupImgText } from './constants.js';
-// import { closePopupOverlay } from "./index.js";
+export default class Card {
+    constructor(data, handleCardClick, cardSelector) {
+        this._name = data.name;
+        this._link = data.link;
+        this._handleCardClick = handleCardClick;
+        this._cardSelector = cardSelector;
+    }
 
-// export default class Card {
-//     constructor(title, imgLink, template) {
-//         this._title = title
-//         this._imgLink = imgLink
-//         this._card = document.querySelector(template).content.cloneNode(true);
-//         this._photo = this._card.querySelector('.element__foto');
-//         this._closeBtn = document.querySelector('.popup-img__close');
-//     }
+    _getTemplate() {
+        const cardElement = document.querySelector(this._cardSelector).content.querySelector('.pictures__item').cloneNode(true);
 
-//     _deleteCardHandler(event) {
-//         const card = event.target.closest('.element__group');
-//         card.remove();
-//     }
+        return cardElement;
+    }
 
-//     _photoViewCloseHandler() {
-//         popupFigure.classList.remove('popup__opened');
-//     }
+    generateCard() {
+        this._element = this._getTemplate();
+        const picturesImage = this._element.querySelector('.pictures__image');
+        this._setEventListeners();
 
-//     _photoViewHandler() {
-//         document.body.addEventListener('keydown', escHandlerclosepopup);
-//         popupFigure.addEventListener('keydown', event => {
-//             closePopupOverlay(event, this._photoViewCloseHandler)
-//         })
+        this._element.querySelector('.pictures__title').textContent = this._name;
+        picturesImage.src = this._link;
+        picturesImage.alt = this._name;
 
-//         // Открытие popup
-//         popupFigure.classList.toggle('popup__opened');
-//         popupZoom.src = this._imgLink;
-//         popupImgText.textContent = this._title
-//     }
+        return this._element;
+    }
 
-//     _likeHandler(event) {
-//         const socialLikeTarget = event.target;
-//         socialLikeTarget.classList.toggle('element__social-likeactiv');
-//     }
+    _likeCard() {
+        this._element.querySelector('.pictures__like').classList.toggle('pictures__like_active');
+    }
 
-//     _handlerInit(card) {
-//         // Delete
-//         card.querySelector('.element__delete-but')
-//             .addEventListener('click', this._deleteCardHandler.bind(this));
+    _deleteCard() {
+        this._element.remove();
+        this._element = null;
+    }
 
-//         // Like
-//         card.querySelector('.element__social-like')
-//             .addEventListener('click', this._likeHandler.bind(this))
-
-//         // Photo View
-//         this._photo
-//             .addEventListener('click', this._photoViewHandler.bind(this))
-
-//         return card
-//     }
-
-//     generate() {
-//         this._card = this._handlerInit(this._card)
-//         this._card.querySelector('.element__text').textContent = this._title;
-//         this._photo.alt = this._title;
-//         this._photo.src = this._imgLink;
-//         return this._card
-//     }
-// }
+    _setEventListeners() {
+        this._element.querySelector('.pictures__delete').addEventListener('click', () => this._deleteCard());
+        this._element.querySelector('.pictures__like').addEventListener('click', () => this._likeCard());
+        this._element.querySelector('.pictures__image').addEventListener('click', () => this._handleCardClick());
+    }
+}

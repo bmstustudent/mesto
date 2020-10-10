@@ -1,0 +1,13 @@
+.pictures__delete {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background-image: url('../../../images/trash.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 18px;
+    height: 19.3px;
+    transition: opacity 0.3s ease-in;
+}

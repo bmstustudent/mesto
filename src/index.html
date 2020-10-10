@@ -3,112 +3,105 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mesto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mesto Россия</title>
+
 </head>
 
-<body class="root">
-    <div class="page">
-        <div class="header">
-            <img class="header__logo" src="./images/logo.svg" alt="логотип"></img>
-        </div>
+<body class="page">
+    <div class="page__cover">
+        <header class="header page__header">
+            <a class="logo header__logo opacity" href="./index.html">
+                <img class="logo__image" src="./images/logo.svg" alt="Логотип сайта Место">
+            </a>
+        </header>
 
-        <main class="content">
-            <!--блок Profile-->
+        <main class="content page__content">
             <section class="profile">
-                <div class="profile__place">
-                    <img src="./images/avatar.jpg" alt="фото профиля" class="profile__foto">
+                <div class="profile__cover">
+                    <img class="avatar profile__avatar" src="./images/avatar.jpg" alt="Фотография пользователя">
                     <div class="profile__info">
-                        <div class="profile__items">
-                            <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <!--кнопка редактирования профиля-->
-                            <button class="profile__button-edit" type="button"></button>
+                        <div class="profile__position">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button class="button button_edit profile__button opacity" type="button"></button>
                         </div>
-                        <p class="profile__job">Исследователь океана</p>
+                        <p class="profile__subtitle">Исследователь океана</p>
                     </div>
                 </div>
-                <!--кнопка сохранить-->
-                <button class="profile__button-add" type="button"></button>
+                <button class="button button_add opacity" type="button"></button>
             </section>
-            <!--конец блока Profile-->
-            <!--блок Element-->
-            <section class="element">
-                <ul class="element__list"></ul>
+
+            <section class="pictures">
+                <ul class="pictures__list">
+                </ul>
             </section>
-            <!--конец блока Element-->
         </main>
-        <!--блок footer-->
-        <footer class="footer">
-            <h2 class="footer__autor">&#169; 2020 Mesto Russia</h2>
+        <footer class="footer page__footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
-        <!--конец блока footer-->
 
-        <!--попап открытия кнопки редактирования popup-edit-->
-        <div class="popup" data-type="profile">
-            <div class="popup-container">
-                <button type="button" class="popup__button-close"></button>
-                <form class="popup__content form" action="#" method="POST" name="editProfile" id="form-profile" novalidate>
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <div class="popup__control">
-                        <input type="text" class="popup__prof-name popup__input" required minlength="2" maxlength="40" name="namePrCards">
-                        <span class="popup__error"></span>
+        <section class="popup popup_type_edit">
+            <div class="popup__container">
+                <button class="button popup__close opacity" type="button"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form form_type_edit" action="#" name="redact" novalidate>
+                    <div class="popup__cover">
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_name" type="text" name="user" minlength="2" maxlength="20" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_about" type="text" name="info" minlength="2" maxlength="200" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
                     </div>
-                    <div class="popup__control">
-                        <input type="text" class="popup__prof-text popup__input" required minlength="2" maxlength="200" name="linkPrCards">
-                        <span class="popup__error"></span>
-                    </div>
-                    <button class="popup__button-save" type="submit" disabled>Сохранить</button>
-                </form>
-            </div>
-        </div>
-        <!--конец popup-edit-->
-
-        <!--попап открытия кнопки добавить popup-add-->
-        <section class="popup-mesto popup" data-type="add">
-            <div class="popup-container">
-                <div class="popup-mesto__close"></div>
-                <form class="popup-mesto__content form" action="#" method="POST" name="addElCards" id="form-mesto" novalidate>
-                    <h2 class="popup-mesto__title">Новое место</h2>
-                    <div class="popup-mesto__control popup__control">
-                        <input type="text" class="popup-mesto__prof-name popup__input" placeholder="Название" name="nameElCards" required minlength="1" maxlength="30">
-                        <span class="popup-mesto__error popup__error"></span>
-                    </div>
-                    <div class="popup-mesto__control popup__control">
-                        <input type="url" class="popup-mesto__prof-text popup__input" placeholder="Ссылка на карточку" name="linkElCards" required>
-                        <span class="popup-mesto__error popup__error"></span>
-                    </div>
-
-                    <button class="popup-mesto__button-save popup-mesto__but-disabled  popup__but-disabled popup__button-save" type="submit" disabled>Создать</button>
+                    <input class="button popup__submit" type="submit" value="Сохранить" name="submit">
                 </form>
             </div>
         </section>
-        <!--конец popup-add-->
 
-        <!--попап увеличения фото popup-img-->
-        <section class="popup-img popup" data-type="image">
-            <figure class="popup-img__bloc">
-                <button type="button" class="popup-img__close"></button>
-                <img src="#" alt="#" class="popup-img__foto">
-                <p class="popup-img__name"></p>
-            </figure>
+        <section class="popup popup_type_add">
+            <div class="popup__container">
+                <button class="button popup__close opacity" type="button"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form form_type_add" action="#" name="new-place" novalidate>
+                    <div class="popup__cover">
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_title" type="text" name="name" placeholder="Название" minlength="1" maxlength="30" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_link" type="url" name="link" placeholder="Ссылка на картинку" required>
+                            <span class="popup__error"></span>
+                        </label>
+                    </div>
+                    <input class="button popup__submit" type="submit" value="Сохранить" name="submit">
+                </form>
+            </div>
         </section>
-        <!--конец popup-zoom-->
+
+        <section class="popup popup_type_picture">
+            <div class="popup__container popup__container_type_picture">
+                <button class="button popup__close opacity" type="button"></button>
+                <figure class="popup__figure">
+                    <img class="popup__image" src="#" alt="">
+                    <figcaption class="popup__caption"></figcaption>
+                </figure>
+            </div>
+        </section>
     </div>
-    <!--шаблон элемента карточки-->
-    <template class="element-template">
-    <li class="element__group">
-        <button class="element__delete-but"></button>
-        <img src="#" alt="#" class="element__foto">
-        <div class="element__all">
-            <h2 class="element__text"></h2>
-            <button class="element__social-like"></button>
-        </div>
-    </li>
-    <!--конец шаблона-->
-</template>
 
-    <script src="../dist/main.js">
-    </script>
+    <template class="pictures-template">
+        <li class="pictures__item">
+            <button class="button pictures__delete opacity" type="button"></button>
+            <img class="pictures__image" src="#" alt="">
+            <div class="pictures__cover">
+                <p class="pictures__title"></p>
+                <button class="button pictures__like opacity" type="button"></button>
+            </div>
+        </li>
+    </template>
 
 </body>
 

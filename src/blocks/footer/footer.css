@@ -1,18 +1,14 @@
-@import url(./__autor/footer__autor.css);
+@import url('./__copyright/footer__copyright.css');
+
 .footer {
-    max-width: 882px;
     display: flex;
-    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
 }
 
-@media only screen and (max-width: 881px) {
+@media screen and (max-width: 930px){
     .footer {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 582px) {
-    .footer {
-        max-width: 282px;
+        padding: 0 19px;
     }
 }

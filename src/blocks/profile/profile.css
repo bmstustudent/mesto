@@ -1,26 +1,26 @@
-@import url(./__items/profile__items.css);
-@import url(./__foto/profile__foto.css);
-@import url(./__button-add/profile__button-add.css);
-@import url(./__button-edit/profile__button-edit.css);
-@import url(./__name/profile__name.css);
-@import url(./__job/profile__job.css);
-@import url(./__place/profile__place.css);
+@import url('./__cover/profile__cover.css');
+@import url('./__avatar/profile__avatar.css');
+@import url('./__info/profile__info.css');
+@import url('./__position/profile__position.css');
+@import url('./__title/profile__title.css');
+@import url('./__subtitle/profile__subtitle.css');
+@import url('./__button/profile__button.css');
+
 .profile {
     display: flex;
-    flex-direction: row;
-    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    max-width: 882px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
 }
 
-@media only screen and (max-width: 950px) {
+@media screen and (max-width: 930px){
     .profile {
-        width: 90%;
+        padding: 0 19px;
     }
 }
 
-@media only screen and (max-width: 720px) {
+@media screen and (max-width: 700px){
     .profile {
         flex-direction: column;
     }

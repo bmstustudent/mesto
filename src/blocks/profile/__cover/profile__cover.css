@@ -1,0 +1,21 @@
+.profile__cover {
+    display: flex;
+    align-items: center;
+    min-width: 486px;
+    max-width: 680px;
+}
+
+@media screen and (max-width: 700px){
+    .profile__cover {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 425px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .profile__cover {
+        min-width: 282px;
+    }
+}

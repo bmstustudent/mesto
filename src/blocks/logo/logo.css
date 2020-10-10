@@ -1,0 +1,5 @@
+@import url('./__image/logo__image.css');
+
+.logo {
+    transition: opacity 0.3s ease-in;
+}
