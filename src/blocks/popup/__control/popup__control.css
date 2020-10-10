@@ -1,0 +1,10 @@
+.popup__control {
+    position: relative;
+    min-height: calc(27px + 35px);
+}
+
+@media screen and (max-width: 450px){
+    .popup__control {
+        min-height: calc(24px + 30px);
+    }
+}

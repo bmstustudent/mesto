@@ -1,0 +1,25 @@
+@import url('./__list/pictures__list.css');
+@import url('./__item/pictures__item.css');
+@import url('./__image/pictures__image.css');
+@import url('./__cover/pictures__cover.css');
+@import url('./__title/pictures__title.css');
+@import url('./__like/pictures__like.css');
+@import url('./__like/_active/pictures__like_active.css');
+@import url('./__delete/pictures__delete.css');
+
+.pictures {
+    padding: 50px 0 0;
+    color: #000000;
+}
+
+@media screen and (max-width: 930px){
+    .pictures {
+        padding: 50px 19px 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .pictures {
+        padding: 36px 19px 0;
+    }
+}

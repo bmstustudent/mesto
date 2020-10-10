@@ -1,0 +1,43 @@
+.button_add {
+    position: relative;
+    min-width: 150px;
+    min-height: 50px;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    background-color: #000000;
+    transition: opacity 0.3s ease-in;
+}
+
+.button_add::after,
+.button_add::before {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 22px;
+    background-color: #ffffff;
+    top: 12px;
+    left: 50%;
+}
+
+.button_add::after {
+    transform: rotate(-90deg);
+}
+
+@media screen and (max-width: 700px){
+    .button_add {
+        width: 80%;
+        height: 100%;
+    }
+
+    .button_add::after,
+    .button_add::before {
+        height: 16px;
+        top: 15px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .button_add {
+        width: 100%;
+    }
+}

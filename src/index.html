@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mesto Россия</title>
+
+</head>
+
+<body class="page">
+    <div class="page__cover">
+        <header class="header page__header">
+            <a class="logo header__logo opacity" href="./index.html">
+                <img class="logo__image" src="./images/logo.svg" alt="Логотип сайта Место">
+            </a>
+        </header>
+
+        <main class="content page__content">
+            <section class="profile">
+                <div class="profile__cover">
+                    <img class="avatar profile__avatar" src="./images/avatar.jpg" alt="Фотография пользователя">
+                    <div class="profile__info">
+                        <div class="profile__position">
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button class="button button_edit profile__button opacity" type="button"></button>
+                        </div>
+                        <p class="profile__subtitle">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="button button_add opacity" type="button"></button>
+            </section>
+
+            <section class="pictures">
+                <ul class="pictures__list">
+                </ul>
+            </section>
+        </main>
+        <footer class="footer page__footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+
+        <section class="popup popup_type_edit">
+            <div class="popup__container">
+                <button class="button popup__close opacity" type="button"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form form_type_edit" action="#" name="redact" novalidate>
+                    <div class="popup__cover">
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_name" type="text" name="user" minlength="2" maxlength="20" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_about" type="text" name="info" minlength="2" maxlength="200" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
+                    </div>
+                    <input class="button popup__submit" type="submit" value="Сохранить" name="submit">
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_type_add">
+            <div class="popup__container">
+                <button class="button popup__close opacity" type="button"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form form_type_add" action="#" name="new-place" novalidate>
+                    <div class="popup__cover">
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_title" type="text" name="name" placeholder="Название" minlength="1" maxlength="30" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
+                            <span class="popup__error"></span>
+                        </label>
+                        <label class="popup__control">
+                            <input class="popup__input popup__input_type_link" type="url" name="link" placeholder="Ссылка на картинку" required>
+                            <span class="popup__error"></span>
+                        </label>
+                    </div>
+                    <input class="button popup__submit" type="submit" value="Сохранить" name="submit">
+                </form>
+            </div>
+        </section>
+
+        <section class="popup popup_type_picture">
+            <div class="popup__container popup__container_type_picture">
+                <button class="button popup__close opacity" type="button"></button>
+                <figure class="popup__figure">
+                    <img class="popup__image" src="#" alt="">
+                    <figcaption class="popup__caption"></figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <template class="pictures-template">
+        <li class="pictures__item">
+            <button class="button pictures__delete opacity" type="button"></button>
+            <img class="pictures__image" src="#" alt="">
+            <div class="pictures__cover">
+                <p class="pictures__title"></p>
+                <button class="button pictures__like opacity" type="button"></button>
+            </div>
+        </li>
+    </template>
+
+</body>
+
+</html>

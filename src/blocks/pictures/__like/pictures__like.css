@@ -1,0 +1,22 @@
+.pictures__like {
+    background-image: url('../../../images/hert.svg');
+    padding: 0;
+    min-width: 21px;
+    min-height: 19px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 21px 19px;
+    background-position: center;
+    transition: all 0.2s ease;
+}
+
+.pictures__like:active,
+.pictures__like:focus {
+    outline: none;
+}
+
+.pictures__like:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}

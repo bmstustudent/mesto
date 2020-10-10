@@ -1,0 +1,8 @@
+.pictures__image {
+    max-width: 100%;
+    width: 100%;
+    min-height: 282px;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}

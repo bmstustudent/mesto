@@ -1,0 +1,13 @@
+.popup__cover {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(27px * 2 + 35px * 2);
+    margin-bottom: 13px;
+}
+
+@media screen and (max-width: 450px){
+    .popup__cover {
+        min-height: calc(24px * 2 + 30px * 2);
+        margin-bottom: 6px;
+    }
+}
