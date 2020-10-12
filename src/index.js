@@ -19,8 +19,14 @@ const validationParams = {
     errorClass: '.popup__error'
 };
 
-function handleCardClick() {
-    popupTypePicture.open();
+
+const popupImage = document.querySelector('.popup_type_picture')
+
+const popupTypePicture = new PopupWithImage('.popup_type_picture', popupImage);
+popupTypePicture.setEventListeners();
+
+function handleCardClick(name, link) {
+    popupTypePicture.open(name, link);
 }
 const validAdd = new FormValidator(validationParams, addForm);
 validAdd.enableValidation();
@@ -28,29 +34,32 @@ validAdd.enableValidation();
 const validEdit = new FormValidator(validationParams, editForm);
 validEdit.enableValidation();
 
-const popupTypePicture = new PopupWithImage('.popup_type_picture');
-popupTypePicture.setEventListeners();
-
 const user = new UserInfo({ userNameSelector: '.profile__title', userInfoSelector: '.profile__subtitle' });
 const userInfo = user.getUserInfo();
 
 const cardsList = new Section({
+    PREPEND: 0,
+    APPEND: 1,
     items: cardsArray,
     renderer: (item) => {
         const card = new Card(item, handleCardClick, picturesTemplateSelector);
         const cardElement = card.generateCard();
         cardsList.addItem(cardElement);
+        cardsList.addAppend(cardElement);
     },
 }, '.pictures__list')
 
 cardsList.renderItems();
 
 const popupTypeAdd = new PopupWIthForm({
+    PREPEND: 0,
+    APPEND: 1,
     popupSelector: '.popup_type_add',
     handleFormSubmit: (item) => {
         const userCard = new Card(item, handleCardClick, picturesTemplateSelector);
         const cardElement = userCard.generateCard();
         cardsList.addItem(cardElement);
+        cardsList.addAppend(cardElement);
         popupTypeAdd.close();
     }
 });
@@ -68,14 +77,11 @@ const popupTypeEdit = new PopupWIthForm({
 popupTypeEdit.setEventListeners();
 
 editButton.addEventListener('click', () => {
-    validEdit.updateErrorsAndButtonState(editForm);
-
     nameInput.value = userInfo.user;
     jobInput.value = userInfo.info;
-
+    validEdit.updateErrorsAndButtonState(editForm);
     nameInput.dispatchEvent(new Event('input'));
     jobInput.dispatchEvent(new Event('input'));
-
     popupTypeEdit.open();
 });
 

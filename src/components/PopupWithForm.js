@@ -1,7 +1,7 @@
 import Popup from './Popup.js';
 
 export default class PopupWIthForm extends Popup {
-    constructor({ popupSelector, handleFormSubmit }){
+    constructor({ popupSelector, handleFormSubmit }) {
         super(popupSelector);
         this._handleFormSubmit = handleFormSubmit;
         this._form = this._popup.querySelector('.popup__form');
@@ -16,7 +16,7 @@ export default class PopupWIthForm extends Popup {
 
     close() {
         super.close();
-        this._form.reset();
+        this._form.reset(); // в прошлых ревью это описывали,как баг, если форму зыкрывают, значит данные должны ресетиться
     }
 
     setEventListeners() {
