@@ -35,7 +35,6 @@ const validEdit = new FormValidator(validationParams, editForm);
 validEdit.enableValidation();
 
 const user = new UserInfo({ userNameSelector: '.profile__title', userInfoSelector: '.profile__subtitle' });
-const userInfo = user.getUserInfo();
 
 const cardsList = new Section({
     items: cardsArray,
@@ -71,13 +70,9 @@ const popupTypeEdit = new PopupWIthForm({
 popupTypeEdit.setEventListeners();
 
 editButton.addEventListener('click', () => {
+    const userInfo = user.getUserInfo();
     nameInput.value = userInfo.user;
     jobInput.value = userInfo.info;
-    validEdit.updateErrorsAndButtonState(editForm);
-    nameInput.dispatchEvent(new Event('input'));
-
-
-    jobInput.dispatchEvent(new Event('input'));
     popupTypeEdit.open();
 });
 
