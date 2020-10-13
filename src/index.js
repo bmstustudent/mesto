@@ -22,7 +22,7 @@ const validationParams = {
 
 const popupImage = document.querySelector('.popup_type_picture')
 
-const popupTypePicture = new PopupWithImage('.popup_type_picture', popupImage);
+const popupTypePicture = new PopupWithImage('.popup_type_picture');
 popupTypePicture.setEventListeners();
 
 function handleCardClick(name, link) {
@@ -38,13 +38,10 @@ const user = new UserInfo({ userNameSelector: '.profile__title', userInfoSelecto
 const userInfo = user.getUserInfo();
 
 const cardsList = new Section({
-    PREPEND: 0,
-    APPEND: 1,
     items: cardsArray,
     renderer: (item) => {
         const card = new Card(item, handleCardClick, picturesTemplateSelector);
         const cardElement = card.generateCard();
-        cardsList.addItem(cardElement);
         cardsList.addAppend(cardElement);
     },
 }, '.pictures__list')
@@ -52,13 +49,10 @@ const cardsList = new Section({
 cardsList.renderItems();
 
 const popupTypeAdd = new PopupWIthForm({
-    PREPEND: 0,
-    APPEND: 1,
     popupSelector: '.popup_type_add',
     handleFormSubmit: (item) => {
         const userCard = new Card(item, handleCardClick, picturesTemplateSelector);
         const cardElement = userCard.generateCard();
-        cardsList.addItem(cardElement);
         cardsList.addAppend(cardElement);
         popupTypeAdd.close();
     }
@@ -81,6 +75,8 @@ editButton.addEventListener('click', () => {
     jobInput.value = userInfo.info;
     validEdit.updateErrorsAndButtonState(editForm);
     nameInput.dispatchEvent(new Event('input'));
+
+
     jobInput.dispatchEvent(new Event('input'));
     popupTypeEdit.open();
 });

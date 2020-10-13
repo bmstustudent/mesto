@@ -20,8 +20,6 @@ export default class Card {
         const image = this._element.querySelector('.pictures__image')
         title.textContent = this._name;
         title.title = this._name;
-        image.alt = this._name;
-        image.src = this._link;
         this._setEventListeners();
 
         this._element.querySelector('.pictures__title').textContent = this._name;
