@@ -19,9 +19,6 @@ const validationParams = {
     errorClass: '.popup__error'
 };
 
-
-const popupImage = document.querySelector('.popup_type_picture')
-
 const popupTypePicture = new PopupWithImage('.popup_type_picture');
 popupTypePicture.setEventListeners();
 
@@ -52,7 +49,7 @@ const popupTypeAdd = new PopupWIthForm({
     handleFormSubmit: (item) => {
         const userCard = new Card(item, handleCardClick, picturesTemplateSelector);
         const cardElement = userCard.generateCard();
-        cardsList.addAppend(cardElement);
+        cardsList.addItem(cardElement);
         popupTypeAdd.close();
     }
 });
@@ -73,6 +70,7 @@ editButton.addEventListener('click', () => {
     const userInfo = user.getUserInfo();
     nameInput.value = userInfo.user;
     jobInput.value = userInfo.info;
+    validEdit.updateErrorsAndButtonState(editForm);
     popupTypeEdit.open();
 });
 
@@ -80,3 +78,5 @@ addButton.addEventListener('click', () => {
     validAdd.updateErrorsAndButtonState(addForm);
     popupTypeAdd.open();
 });
+// только учусь, поэтому проверил,что всё добавляется и сохраняется, но что бы удалить данные и снова открывать,пока для меня это не очевидно
+// спасибо за ревью, очень много ДОпонял!!!
