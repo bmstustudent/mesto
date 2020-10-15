@@ -8,6 +8,16 @@ import UserInfo from '../components/UserInfo.js';
 import { cardsArray } from '../utils/cards.js';
 import { editButton, editForm, nameInput, jobInput, addButton, addForm, picturesTemplateSelector } from '../utils/variables.js';
 
+// при загрузке страница делает запрос на сервер "логин и пароль"
+// const api = new Api({
+//     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-16/',
+//     headers: {
+//         authorization: 'b9208915 - d1f7 - 4 b9c - af49 - 26 bdde24640d',
+//         'Content-Type': 'application/json',
+//     }
+// })
+
+// объект настроек
 const validationParams = {
     formElement: '.popup__form',
     inputElement: '.popup__input',
@@ -78,5 +88,3 @@ addButton.addEventListener('click', () => {
     validAdd.updateErrorsAndButtonState(addForm);
     popupTypeAdd.open();
 });
-// только учусь, поэтому проверил,что всё добавляется и сохраняется, но что бы удалить данные и снова открывать,пока для меня это не очевидно
-// спасибо за ревью, очень много ДОпонял!!!

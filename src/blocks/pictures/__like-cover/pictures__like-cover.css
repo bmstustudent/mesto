@@ -1,0 +1,10 @@
+.pictures__like-cover {
+    position: relative;
+    top: -4px;
+    right: 0;
+    min-height: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -6,19 +6,21 @@
 @import url('./__like/pictures__like.css');
 @import url('./__like/_active/pictures__like_active.css');
 @import url('./__delete/pictures__delete.css');
-
+@import url('./__delete/_show/pictures__delete_show.css');
+@import url('./__like-counter/pictures__like-counter.css');
+@import url('./__like-cover/pictures__like-cover.css');
 .pictures {
     padding: 50px 0 0;
     color: #000000;
 }
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 930px) {
     .pictures {
         padding: 50px 19px 0;
     }
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
     .pictures {
         padding: 36px 19px 0;
     }

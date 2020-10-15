@@ -1,4 +1,5 @@
 .pictures__delete {
+    display: none;
     position: absolute;
     top: 18px;
     right: 15px;
