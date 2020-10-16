@@ -34,6 +34,7 @@ function handleCardDelete(card) {
         api.deleteCard(card._id)
             .then(() => {
                 card.deleteCard();
+
                 popupTypeDelete.close();
             })
             .catch((err) => {
@@ -65,7 +66,7 @@ function newCardMaker(data, currentUserId, cardsList) {
         picturesTemplateSelector);
     const cardElement = newCard.generateCard();
     newCard.setLike(data);
-    cardsList.addItem(cardElement);
+    cardsList.addInitialItem(cardElement);
 }
 
 const validAdd = new FormValidator(validationParams, addForm);

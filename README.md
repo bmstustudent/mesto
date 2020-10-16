@@ -2,10 +2,11 @@
 [Ссылка на сам проект](https://bmstustudent.github.io/mesto/index.html)
 
 Место - сайт, где в дальнейшем можно будет постить свои фотографии, лайкать их и удалять.
-## Макет пердоставлен Yandex-praktikum:
+## Макет предоставлен Yandex-praktikum:
 [Макет 4](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
 [Макет 5](https://www.figma.com/file/nlYpT4VhFiwimn2YlncrcF/JavaScript.-Sprint-5?node-id=0%3A1)
 [Макет 6](https://www.figma.com/file/XNaGNEZD5NEjeyJzAT4gMb/JavaScript.-Sprint-6)
+[Макет 9](https://www.figma.com/file/hhhIavVTeuilfPPZ6sbifl/JavaScript.-Sprint-9?node-id=0%3A1)
 
 ## Фотографии брал с сайта
 [Unsplash](https://unsplash.com/)
@@ -65,7 +66,6 @@
 
 ### Настроена сборка Вебпаком:
 ![alt pic](https://github.com/bmstustudent/mesto/blob/master/webpack.png)
-
 
 # Пример, как работает открыть/закрыть popup:
 ![alt gif](https://github.com/bmstustudent/mesto/blob/master/mesto-gif.gif)

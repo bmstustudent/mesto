@@ -1,3 +1,5 @@
+import Api from "./Api";
+
 export default class Section {
     constructor({ renderer }, containerSelector) {
         this._renderer = renderer;
@@ -5,10 +7,10 @@ export default class Section {
     }
 
     renderItems(items) {
-        items.forEach(item => this._renderer(item));
+        items.reverse().forEach(item => this._renderer(item));
     }
 
-    addItem(element) {
-        this._container.append(element);
+    addInitialItem(element) {
+        this._container.prepend(element);
     }
 }

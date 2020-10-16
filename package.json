@@ -31,10 +31,10 @@
         "postcss-loader": "^4.0.4",
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.0"
+        "webpack-dev-server": "^3.11.0",
+        "rimraf": "^3.0.2"
     },
     "dependencies": {
-        "core-js": "^3.6.5",
-        "rimraf": "^3.0.2"
+        "core-js": "^3.6.5"
     }
 }
