@@ -1,0 +1,11 @@
+.popup__cover_type_avatar {
+    min-height: calc(27px * 1 + 35px * 1);
+    margin-bottom: 13px;
+}
+
+@media screen and (max-width: 450px){
+    .popup__cover_type_avatar {
+        min-height: calc(24px * 1 + 30px * 1);
+        margin-bottom: 6px;
+    }
+}
