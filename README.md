@@ -170,6 +170,8 @@
 
 ### Подключение проекта Mesto к серверу.
 
+[По вопросам доработки сайта](https://t.me/therealshulc)
+
 # Пример, как работает открыть/закрыть popup:
 ![alt gif](https://github.com/bmstustudent/mesto/blob/master/gif/mesto_animation.gif)
 
