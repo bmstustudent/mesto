@@ -1,9 +1,8 @@
 <h1 align="center">Mesto</h1>
-<img src="./gif/mesto_header.png" width="100%">
+<img src="./gif/mesto_header.png" width="100%" alt="место фото" href="https://bmstustudent.github.io/mesto/index.html" target= blank> 
 
 [Ссылка на сам проект](https://bmstustudent.github.io/mesto/index.html)
 
-Место - сайт, где в дальнейшем можно будет постить свои фотографии, лайкать их и удалять.
 ## Макет предоставлен Yandex-praktikum:
 [Макет 4](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
 [Макет 5](https://www.figma.com/file/nlYpT4VhFiwimn2YlncrcF/JavaScript.-Sprint-5?node-id=0%3A1)
