@@ -1,5 +1,5 @@
-<h1 align="center"><a  href="https://bmstustudent.github.io/mesto/index.html">Mesto</a></h1>
-<img src="./gif/mesto_header.png" width="100%" alt="место фото"> 
+<h1 align="center"><a  href="https://bmstustudent.github.io/mesto/index.html" target="_blank"><img src="./gif/mesto_header.png" width="100%" alt="место фото"></a></h1>
+ 
 
 
 ## Краткое описание:
@@ -10,7 +10,7 @@
 Для работы с проектом вам понадобятся git, NodeJS
 * [Как установить git.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Как установить NodeJS.](https://nodejs.org/en/download/package-manager/)
-* [Как установить Webpack.](см.ниже: "Установка сборщика")
+* Как установить Webpack: инструкция ниже
 
 ### Локальная установка:
 В командной строке перейдите в папку, где будет развернут проект. После чего скопируйте его с GitHub:
@@ -101,6 +101,7 @@
 `npm i optimize-css-assets-webpack-plugin --save-dev` - *нужен для дополнительной оптимизации CSS*
 
 `npm i path --save-dev` - *предоставляет утилиты для работы с путями к файлам и директориям*
+
 
 ## Макет предоставлен Yandex-praktikum:
 
