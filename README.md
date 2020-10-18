@@ -1,4 +1,6 @@
-# Проект - "Mesto"
+<h1 align="center">Mesto</h1>
+<img src="./gif/mesto_header.png" width="100%">
+
 [Ссылка на сам проект](https://bmstustudent.github.io/mesto/index.html)
 
 Место - сайт, где в дальнейшем можно будет постить свои фотографии, лайкать их и удалять.
@@ -65,8 +67,8 @@
 - создание класса UserInfo: отвечает за управление отображением информации о пользователе на странице.
 
 ### Настроена сборка Вебпаком:
-![alt pic](https://github.com/bmstustudent/mesto/blob/master/webpack.png)
+![alt pic](https://github.com/bmstustudent/mesto/blob/master/build_webpack.png)
 
 # Пример, как работает открыть/закрыть popup:
-![alt gif](https://github.com/bmstustudent/mesto/blob/master/mesto-gif.gif)
+![alt gif](https://github.com/bmstustudent/mesto/blob/master/gif/mesto_animation.gif)
 
